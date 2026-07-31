@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AgriGuard AI | Smart Irrigation</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+    background:#e8f5e9;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.navbar{
+    background:#198754;
+}
+
+.navbar-brand{
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.navbar-brand:hover{
+    color:white;
+}
+
+.container-box{
+    max-width:700px;
+    margin:40px auto;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0px 5px 20px rgba(0,0,0,.2);
+}
+
+h2{
+    color:#198754;
+    text-align:center;
+    margin-bottom:30px;
+    font-weight:bold;
+}
+
+.sensor-card{
+    background:#f8f9fa;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.value{
+    font-size:40px;
+    color:#198754;
+    font-weight:bold;
+}
+
+.status{
+    font-size:26px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.btn-success{
+    width:100%;
+    font-size:18px;
+}
+
+footer{
+    background:#198754;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="container">
+
+<a class="navbar-brand" href="/dashboard">
+🌾 AgriGuard AI
+</a>
+
+</div>
+</nav>
+
+<div class="container-box">
+
+<h2>💧 Smart Irrigation System</h2>
+
+<div class="sensor-card">
+
+<h4>Current Soil Moisture</h4>
+
+<div class="value" id="moisture">
+-- %
+</div>
+
+</div>
+
+<div class="sensor-card">
+
+<h4>Pump Status</h4>
+
+<div class="status" id="pumpStatus">
+Click "Check Irrigation"
+</div>
+
+</div>
+
+<button
+class="btn btn-success"
+onclick="checkIrrigation()">
+
+Check Irrigation
+
+</button>
+
+</div>
+
+<footer>
+
+<h5>🌾 AgriGuard AI</h5>
+
+<p>
+AI • IoT • Semiconductor Sensor Technology • Green Chemistry
+</p>
+
+<p>
+❤️ Smart Farming for Sustainable Agriculture ❤️
+</p>
+
+</footer>
+
+<script>
+
+function checkIrrigation(){
+
+let moisture = Math.floor(Math.random()*101);
+
+document.getElementById("moisture").innerHTML = moisture + " %";
+
+if(moisture < 40){
+
+document.getElementById("pumpStatus").innerHTML =
+"🔴 Pump ON (Low Moisture)";
+
+document.getElementById("pumpStatus").style.color="red";
+
+}
+else{
+
+document.getElementById("pumpStatus").innerHTML =
+"🟢 Pump OFF (Sufficient Moisture)";
+
+document.getElementById("pumpStatus").style.color="green";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
